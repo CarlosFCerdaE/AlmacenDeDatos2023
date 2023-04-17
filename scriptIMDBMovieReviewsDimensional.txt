@@ -1,0 +1,37 @@
+CREATE TABLE `data.dimRegion` (
+  `idRegion` STRING,
+  `regionName` STRING,
+  `languageName` STRING
+);
+
+CREATE TABLE `data.dimTitleCast` (
+  `idTitleCast` STRING,
+  `primaryName` STRING,
+  `birthYear` STRING,
+  `deathYear` STRING,
+  `primaryProfession` ARRAY<STRING>,
+  `category` STRING,
+  `job` STRING,
+  `characters` STRING,
+  `idRegion` STRING
+);
+
+CREATE TABLE `data.dimTitles`(
+  `idTitles` STRING,
+  `type` STRING,
+  `primeryTitle` STRING,
+  `originalTitle` STRING,
+  `isAdult` BOOL,
+  `genres` ARRAY<STRING>
+);
+
+CREATE TABLE `data.factReviews`(
+  `idReview` STRING,
+  `startYear` INT64,
+  `endYear` INT64,
+  `runtimeMinutes`INT64,
+  `averageRating` FLOAT64,
+  `numVotes` INT64,
+  `idTitleCast` STRING,
+  `idTitles` STRING
+);

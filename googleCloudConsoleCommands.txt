@@ -1,0 +1,19 @@
+python pipelineTest.py \
+--runner DataflowRunner \
+--project imdbmoviereviews \
+--temp_location gs://bucketimdb/tmp/ \
+--staging_location gs://bucketimdb/staging/ \
+--region us-central1 \
+--input_file1_nameBasics gs://bucketimdb/nameBasics.tsv \
+--input_file2_titleBasics gs://bucketimdb/titleBasics.tsv \
+--input_file3_titlePrincipals gs://bucketimdb/titlePrincipals.tsv \
+--input_file4_titleRatings gs://bucketimdb/titleRatings.tsv \
+--output_table_dimTitleCast imdbmoviereviews:data.dimTitleCast \
+--output_table_dimTitles imdbmoviereviews:data.dimTitles \
+--output_table_factReviews imdbmoviereviews:data.factReviews
+
+
+
+
+gsutil cp gs://bucketimdb/scripts/pipelineTest.py /home/cfco54/
+
